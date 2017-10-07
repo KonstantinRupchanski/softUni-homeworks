@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
-
+﻿
 namespace PrimesInGivenRange
 {
     using System;
+    using System.Collections.Generic;
+
 
     public class StartUp
     {
@@ -13,7 +14,7 @@ namespace PrimesInGivenRange
             }
         }
 
-        public static bool isPrime(int startNum, int endNum)
+        public static int IsPrime(int startNum, int endNum)
         {
         bool isPrime = true;
             for (int i = startNum; i <= 50; i++)
