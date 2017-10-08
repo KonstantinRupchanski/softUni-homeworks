@@ -6,42 +6,43 @@
     {
         public static void Main()
         {
-            string opCode = Console.ReadLine();
+            string command = Console.ReadLine();
+            long result = 0;
 
-            while (opCode != "end")
+            while (command != "END")
             {
-                string[] codeArgs = opCode.Split(' ');
+                string[] codeArgs = command.Split(' ');
 
-                long result = 0;
                 switch (codeArgs[0])
                 {
                     case "INC":
-                    {
-                        int operandOne = int.Parse(codeArgs[1]);
-                        result = operandOne++;
-                        break;
-                    }
+                        {
+                            long operandOne = long.Parse(codeArgs[1]);
+                            result = ++operandOne;
+                            break;
+                        }
                     case "DEC":
-                    {
-                        int operandOne = int.Parse(codeArgs[1]);
-                        result = operandOne--;
-                        break;
-                    }
+                        {
+                            long operandOne = long.Parse(codeArgs[1]);
+                            result = --operandOne;
+                            break;
+                        }
                     case "ADD":
-                    {
-                        int operandOne = int.Parse(codeArgs[1]);
-                        int operandTwo = int.Parse(codeArgs[2]);
-                        result = operandOne + operandTwo;
-                        break;
-                    }
+                        {
+                            long operandOne = long.Parse(codeArgs[1]);
+                            long operandTwo = long.Parse(codeArgs[2]);
+                            result = (long)operandOne + operandTwo;
+                            break;
+                        }
                     case "MLA":
-                    {
-                        int operandOne = int.Parse(codeArgs[1]);
-                        int operandTwo = int.Parse(codeArgs[2]);
-                        result = (long)(operandOne * operandTwo);
-                        break;
-                    }
+                        {
+                            long operandOne = long.Parse(codeArgs[1]);
+                            long operandTwo = long.Parse(codeArgs[2]);
+                            result = (long)operandOne * operandTwo;
+                            break;
+                        }
                 }
+                command = Console.ReadLine();
                 Console.WriteLine(result);
             }
         }

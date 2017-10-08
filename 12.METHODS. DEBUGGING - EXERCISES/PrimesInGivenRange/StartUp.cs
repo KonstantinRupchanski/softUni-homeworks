@@ -9,32 +9,47 @@ namespace PrimesInGivenRange
     {
         public static void Main()
         {
-            int startNum = int.Parse(Console.ReadLine());
-            int endNum = int.Parse(Console.ReadLine());
-            }
+            int num1 = int.Parse(Console.ReadLine());
+            int num2 = int.Parse(Console.ReadLine());
+
+            checkForPrimes(num1, num2);
         }
 
-        public static int IsPrime(int startNum, int endNum)
+        private static void checkForPrimes(int num1, int num2)
         {
-        bool isPrime = true;
-            for (int i = startNum; i <= 50; i++)
-        {
-            for (int j = 2; j <= 100; j++)
-            {
+            List<int> numbers = new List<int>();
 
-                if (i != j && i % j == 0)
+            if (num1 > num2)
+            {
+                Console.WriteLine("empty list");
+                return;
+            }
+            if (num1 <= 1 || num2 < 0)
+            {
+                num1 = 2;
+            }
+            for (int i = num1; i <= num2; i++)
+            {
+                bool isPrime = true;
+                for (int j = 2; j <= Math.Sqrt(i); j++)
                 {
-                    isPrime = false;
-                    break;
+                    if (i % j == 0)
+                    {
+                        isPrime = false;
+                        break;
+                    }
                 }
-
+                if (isPrime)
+                {
+                    numbers.Add(i);
+                }
             }
-            if (isPrime)
-            {
-                Console.Write($"{i}, ");
-            }
-            isPrime = true;
+            print(numbers);
+        }
 
+        private static void print(List<int> numbers)
+        {
+            Console.WriteLine(String.Join(", ", numbers));
         }
 
     }
