@@ -45,9 +45,9 @@ namespace MostFrequentNumber
     using System;
     using System.Linq;
 
-    class StartUp
+    public class StartUp
     {
-        static void Main()
+        public static void Main()
         {
             int n = Console.ReadLine()
                 .Split(' ')
