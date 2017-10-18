@@ -69,7 +69,7 @@ namespace Phonebook
 
                     if (phonebook.ContainsKey(input[1]))
                     {
-                        Console.WriteLine(input[1] + " -> " + phonebook[input[1]]);
+                        Console.WriteLine($"{input[1]} -> {phonebook[input[1]]}");
                     }
                     else
                     {
